@@ -46,7 +46,27 @@ The project will be developed through explicit baselines, documented implementat
 The following diagram represents the **planned** system flow, not a claim that every component is already implemented.
 
 ```mermaid
-flowchart TD\n A[Versioned churn dataset] --> B[Data validation and leakage checks]\n B --> C[Preprocessing pipeline]\n C --> D[Stratified data split]\n D --> E1[Logistic Regression]\n D --> E2[Random Forest]\n D --> E3[XGBoost]\n E1 --> F[Model comparison]\n E2 --> F\n E3 --> F\n F --> G[Calibration and threshold analysis]\n G --> H[SHAP explanations]\n H --> I[Risk dashboard and transparent action rules]\n F --> J[Evaluation report]
+
+flowchart TD
+    A["Customer dataset"] --> B["Data validation and cleaning"]
+    B --> C["Exploratory data analysis"]
+    C --> D["Feature engineering"]
+    D --> E["Train and test split"]
+    E --> F["Model training"]
+    F --> G["Logistic Regression"]
+    F --> H["Random Forest"]
+    F --> I["XGBoost"]
+    G --> J["Model comparison"]
+    H --> J
+    I --> J
+    J --> K["Probability calibration"]
+    K --> L["Churn risk prediction"]
+    L --> M["Model evaluation"]
+    L --> N["SHAP explainability"]
+    M --> O["Churn intelligence dashboard"]
+    N --> O
+    O --> P["Risk insights and suggested actions"]
+
 ```
 
 ## Evaluation strategy
